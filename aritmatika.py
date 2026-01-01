@@ -27,4 +27,4 @@ def kalkulator_aritmatika():
             return
         hasil = a / b
 
-    print("Hasil:", hasil)
+    print("Hasil:", round(hasil, 2))

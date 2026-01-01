@@ -20,26 +20,22 @@ def konversi_mata_uang():
     print("3. Keduanya")
     pilihan_currency = input("Masukkan pilihan (1-3): ")
 
-    base_url = "https://api.exchangerate.host/latest"
-    params = {
-        "base": "IDR",
-        "symbols": "USD,EUR"
-    }
+    # Menggunakan API publik yang gratis dan tidak memerlukan API key
+    url = "https://api.exchangerate-api.com/v4/latest/IDR"
 
     try:
-        query_string = urllib.parse.urlencode(params)
-        url = f"{base_url}?{query_string}"
-
         with urllib.request.urlopen(url) as response:
             data = json.loads(response.read().decode())
 
         rate_usd = data["rates"]["USD"]
         rate_eur = data["rates"]["EUR"]
 
-    except Exception:
-        print("\n(Info: Gagal mengambil kurs real-time, menggunakan kurs estimasi)")
-        rate_usd = 1 / 15500
-        rate_eur = 1 / 16800
+    except Exception as e:
+        print(f"\n(Info: Gagal mengambil kurs real-time: {e})")
+        print("(Menggunakan kurs estimasi)")
+        # Fallback rates (Estimasi kasar)
+        rate_usd = 1 / 16000  
+        rate_eur = 1 / 17500
 
     print("\n--- Hasil Konversi ---")
     print(f"IDR : Rp {idr:,}")

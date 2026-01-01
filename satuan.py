@@ -4,4 +4,4 @@ def gram_ke_kg():
     gram = float(input("Masukkan berat (gram): "))
 
     kg = gram / 1000
-    print(f"Hasil: {kg} kg")
+    print(f"Hasil: {round(kg, 3)} kg")

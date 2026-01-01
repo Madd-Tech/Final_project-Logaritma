@@ -31,7 +31,7 @@ def hitung_bmi():
             break
 
     print("\n--- Hasil BMI ---")
-    print(f"Berat Badan : {berat} kg")
-    print(f"Tinggi     : {tinggi_cm} cm")
+    print(f"Berat Badan : {round(berat, 2)} kg")
+    print(f"Tinggi     : {round(tinggi_cm, 2)} cm")
     print(f"BMI        : {round(bmi, 2)}")
     print(f"Kategori   : {hasil_kategori}")

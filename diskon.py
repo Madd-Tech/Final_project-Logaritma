@@ -17,7 +17,7 @@ def hitung_diskon():
     harga_akhir = harga_asli - nilai_diskon
 
     print("\n--- Hasil Perhitungan ---")
-    print(f"Harga Asli   : Rp {harga_asli}")
+    print(f"Harga Asli   : Rp {harga_asli:,.2f}")
     print(f"Diskon       : {persen_diskon}%")
-    print(f"Potongan     : Rp {nilai_diskon}")
-    print(f"Harga Akhir  : Rp {harga_akhir}")
+    print(f"Potongan     : Rp {nilai_diskon:,.2f}")
+    print(f"Harga Akhir  : Rp {harga_akhir:,.2f}")
